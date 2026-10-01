@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5735F40C-3207-4260-B0A4-205DA96BE51C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Gym</RootNamespace>
+    <AssemblyName>Gym</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseUserControl.Designer.cs">
+      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomConstrols\CustomToggleSwitch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomConstrols\CustomToggleSwitch.Designer.cs">
+      <DependentUpon>CustomToggleSwitch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomConstrols\ucComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomConstrols\ucComboBox.Designer.cs" />
+    <Compile Include="CustomConstrols\CustomDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomConstrols\CustomDataGridView.Designer.cs">
+      <DependentUpon>CustomDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomConstrols\CustomDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomConstrols\CustomDateTimePicker.Designer.cs">
+      <DependentUpon>CustomDateTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBackUpRestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackUpRestore.Designer.cs">
+      <DependentUpon>frmBackUpRestore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Locker\frmBulkAddLockers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Locker\frmBulkAddLockers.Designer.cs">
+      <DependentUpon>frmBulkAddLockers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Locker\frmSetLockerMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Locker\frmSetLockerMaintenance.Designer.cs">
+      <DependentUpon>frmSetLockerMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Locker\frmRentLocker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Locker\frmRentLocker.Designer.cs">
+      <DependentUpon>frmRentLocker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Locker\frmTransferLocker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Locker\frmTransferLocker.Designer.cs">
+      <DependentUpon>frmTransferLocker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberShips\frmMemberShipsAlerts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberShips\frmMemberShipsAlerts.Designer.cs">
+      <DependentUpon>frmMemberShipsAlerts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members\UpdateMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members\UpdateMember.Designer.cs">
+      <DependentUpon>UpdateMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products\frmAddUpdateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products\frmAddUpdateProduct.Designer.cs">
+      <DependentUpon>frmAddUpdateProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products\ucListProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Products\ucListProducts.Designer.cs">
+      <DependentUpon>ucListProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members\frmMemberProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members\frmMemberProfile.Designer.cs">
+      <DependentUpon>frmMemberProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomConstrols\RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomConstrols\RoundedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomConstrols\ucTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomConstrols\ucTextBox.Designer.cs">
+      <DependentUpon>ucTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products\ucCategories.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Products\ucCategories.Designer.cs">
+      <DependentUpon>ucCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products\ucProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Products\ucProducts.Designer.cs">
+      <DependentUpon>ucProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\ucSales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sales\ucSales.Designer.cs">
+      <DependentUpon>ucSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\frmSalesHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\frmSalesHistory.Designer.cs">
+      <DependentUpon>frmSalesHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Audit Logs\ucAuditLogs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Audit Logs\ucAuditLogs.Designer.cs">
+      <DependentUpon>ucAuditLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Locker\ucLockerManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Locker\ucLockerManagement.Designer.cs">
+      <DependentUpon>ucLockerManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmUpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmUpdateUser.Designer.cs">
+      <DependentUpon>frmUpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\ucListUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\ucListUsers.Designer.cs">
+      <DependentUpon>ucListUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmAddUser.Designer.cs">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members\frmRegisterMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members\frmRegisterMember.Designer.cs">
+      <DependentUpon>frmRegisterMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberShips\RenewMemberShip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberShips\RenewMemberShip.Designer.cs">
+      <DependentUpon>RenewMemberShip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubscriptionPlans\frmSubscriptionPlans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubscriptionPlans\frmSubscriptionPlans.Designer.cs">
+      <DependentUpon>frmSubscriptionPlans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubscriptionPlans\frmUpdateSubscriptionPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubscriptionPlans\frmUpdateSubscriptionPlan.Designer.cs">
+      <DependentUpon>frmUpdateSubscriptionPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Members\ListMembers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Members\ListMembers.Designer.cs">
+      <DependentUpon>ListMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomConstrols\ucComboBox.resx" />
+    <EmbeddedResource Include="frmBackUpRestore.resx">
+      <DependentUpon>frmBackUpRestore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locker\frmBulkAddLockers.resx">
+      <DependentUpon>frmBulkAddLockers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locker\frmSetLockerMaintenance.resx">
+      <DependentUpon>frmSetLockerMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locker\frmRentLocker.resx">
+      <DependentUpon>frmRentLocker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locker\frmTransferLocker.resx">
+      <DependentUpon>frmTransferLocker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberShips\frmMemberShipsAlerts.resx">
+      <DependentUpon>frmMemberShipsAlerts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\UpdateMember.resx">
+      <DependentUpon>UpdateMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products\frmAddUpdateProduct.resx">
+      <DependentUpon>frmAddUpdateProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\frmMemberProfile.resx">
+      <DependentUpon>frmMemberProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomConstrols\ucTextBox.resx">
+      <DependentUpon>ucTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products\ucCategories.resx">
+      <DependentUpon>ucCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products\ucProducts.resx">
+      <DependentUpon>ucProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\ucSales.resx">
+      <DependentUpon>ucSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\frmSalesHistory.resx">
+      <DependentUpon>frmSalesHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Audit Logs\ucAuditLogs.resx">
+      <DependentUpon>ucAuditLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locker\ucLockerManagement.resx">
+      <DependentUpon>ucLockerManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmUpdateUser.resx">
+      <DependentUpon>frmUpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\ucListUsers.resx">
+      <DependentUpon>ucListUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmAddUser.resx">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\frmRegisterMember.resx">
+      <DependentUpon>frmRegisterMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberShips\RenewMemberShip.resx">
+      <DependentUpon>RenewMemberShip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubscriptionPlans\frmSubscriptionPlans.resx">
+      <DependentUpon>frmSubscriptionPlans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubscriptionPlans\frmUpdateSubscriptionPlan.resx">
+      <DependentUpon>frmUpdateSubscriptionPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\ListMembers.resx">
+      <DependentUpon>ListMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\clsBusinessLayer\clsBusinessLayer.csproj">
+      <Project>{2065e3bc-1081-448c-8af6-d0a14bd14f48}</Project>
+      <Name>clsBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTOs\DTOs.csproj">
+      <Project>{4fb90459-397e-4453-ad0a-ffbe7aac2c92}</Project>
+      <Name>DTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{81d92c97-cc04-4f3d-a2e3-91d968cb5514}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closeBlack32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gym Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2026-04-16_18-52-54.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add Person 40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\People 400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gym Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-do-not-disturb-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-users-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add New User 72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add New User 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-show-password-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-change-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-change-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-services-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-light-on-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-settings-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-save-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-change-401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-show-password-401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-change-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-users-801.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-do-not-disturb-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close 64.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
